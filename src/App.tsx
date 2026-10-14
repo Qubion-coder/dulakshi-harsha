@@ -10,6 +10,7 @@ import { Details } from './components/Details';
 
 // Removed Timeline import
 
+import { RSVPForm } from './components/RSVPForm';
 import { Footer } from './components/Footer';
 import { IntroVideo } from './components/IntroVideo';
 import { IntroOverlay } from './components/IntroOverlay';
@@ -70,14 +71,26 @@ export default function App() {
   return (
     <div className="relative min-h-screen font-sans selection:bg-brand-gold selection:text-white overflow-x-hidden text-brand-ink">
       {/* Fixed Full Site Background */}
-      <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-white via-brand-cream to-brand-beige" />
+      <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-white via-brand-cream to-brand-beige">
+        {/* Watermark video behind the sections after the hero */}
+        <video
+          className="absolute inset-0 h-full w-full object-cover opacity-10 sepia-[0.3]"
+          src="/background.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
+      </div>
 
       <FloatingPetals />
       
       {/* Background Music */}
       <audio
         ref={audioRef}
-        src="/Lana_De_Rey_-_Young_And_Beautiful_(mp3.pm).mp3"
+        src="/wassak-wela-raveen-tharuka.mp3"
         loop
         onPlay={() => setIsMusicPlaying(true)}
         onPause={() => setIsMusicPlaying(false)}
@@ -130,9 +143,7 @@ export default function App() {
 
             <Countdown targetDate={weddingDate} />
 
-
-
-
+            <RSVPForm />
 
             <Footer />
           </motion.main>

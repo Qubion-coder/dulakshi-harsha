@@ -2,7 +2,7 @@ type SheetName = 'rsvp' | 'wishes';
 
 type SheetPayload = Record<string, string | number>;
 
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || "";
 
 export async function submitToGoogleSheet(sheet: SheetName, payload: SheetPayload): Promise<void> {
   if (!GOOGLE_SCRIPT_URL) {

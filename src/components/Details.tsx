@@ -1,12 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-const palette = [
-  { name: 'Cream', color: '#FBF3DF' },
-  { name: 'Beige', color: '#DCC8A8' },
-  { name: 'White', color: '#FFFFFF' },
-];
-
 export const Details: React.FC = () => {
   return (
     <section id="details" className="w-full min-h-[100dvh] snap-start bg-transparent relative overflow-hidden flex flex-col justify-center py-16 px-6">
@@ -71,37 +65,11 @@ export const Details: React.FC = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://maps.app.goo.gl/m6qMjoUyfQf9Gwc19?g_st=iw"
+                href="https://maps.app.goo.gl/Yzv24jkRjBJDkK3ZA"
                 className="mt-5 inline-flex items-center justify-center border border-brand-ink text-brand-ink px-7 py-2.5 text-[11px] tracking-[0.25em] uppercase font-sans hover:bg-brand-ink/10 transition-colors"
               >
                 Google Maps
               </a>
-            </motion.div>
-
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <span className="absolute -right-8 top-1.5 h-[11px] w-[11px] rounded-full bg-brand-ink" />
-              <h3 className="font-display font-normal text-lg sm:text-xl uppercase tracking-[0.2em] text-brand-ink mb-3">
-                Colours
-              </h3>
-              <p className="font-display text-base sm:text-lg text-brand-ink/90 leading-relaxed">
-                Cream, Beige &amp; White
-              </p>
-              <div className="mt-4 flex justify-end gap-3">
-                {palette.map((swatch) => (
-                  <span
-                    key={swatch.name}
-                    title={swatch.name}
-                    className="h-9 w-9 rounded-full border border-brand-ink/30 shadow-sm"
-                    style={{ backgroundColor: swatch.color }}
-                  />
-                ))}
-              </div>
             </motion.div>
           </div>
         </div>
