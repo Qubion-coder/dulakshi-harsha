@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import { Play } from 'lucide-react';
 
 interface IntroOverlayProps {
   onEnter: () => void;
@@ -46,20 +47,30 @@ export const IntroOverlay: React.FC<IntroOverlayProps> = ({ onEnter }) => {
       type="button"
       onClick={onEnter}
       aria-label="Open invitation"
-      className="fixed inset-0 z-50 block w-full h-full overflow-hidden bg-brand-cream cursor-pointer"
+      className="fixed inset-0 z-50 block w-full h-full overflow-hidden bg-black cursor-pointer"
     >
-      {/* Envelope */}
+      {/* Paused, blurred first frame of the intro video */}
       <motion.img
-        src="/Gemini_Generated_Image_q1eruq1eruq1eruq.jpg"
+        src="/intro-poster.jpg"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        initial={{ scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2.5, ease: "easeOut" }}
+        className="absolute inset-0 w-full h-full object-cover blur-md scale-110"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       />
+      <div className="absolute inset-0 bg-black/30" />
+
+      <motion.span
+        className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border border-white/70 bg-white/15 backdrop-blur-sm text-white"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
+      >
+        <Play className="h-8 w-8 translate-x-0.5" strokeWidth={1.25} fill="currentColor" />
+      </motion.span>
 
       <motion.div
-        className="absolute inset-x-0 top-[9%] z-10 flex flex-col items-center px-6 text-center text-brand-ink"
+        className="absolute inset-x-0 top-[9%] z-10 flex flex-col items-center px-6 text-center text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.4 }}
@@ -73,7 +84,7 @@ export const IntroOverlay: React.FC<IntroOverlayProps> = ({ onEnter }) => {
       </motion.div>
 
       <motion.p
-        className="absolute inset-x-0 bottom-[9%] z-10 text-center font-display text-xs sm:text-sm uppercase tracking-[0.35em] text-brand-ink"
+        className="absolute inset-x-0 bottom-[9%] z-10 text-center font-display text-xs sm:text-sm uppercase tracking-[0.35em] text-white"
         animate={{ opacity: [0.35, 1, 0.35] }}
         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -81,7 +92,7 @@ export const IntroOverlay: React.FC<IntroOverlayProps> = ({ onEnter }) => {
       </motion.p>
 
       {invitationNumber && (
-        <div className="absolute bottom-2 right-3 z-20 text-brand-ink/30 font-sans text-xs tracking-widest select-none pointer-events-none">
+        <div className="absolute bottom-2 right-3 z-20 text-white/40 font-sans text-xs tracking-widest select-none pointer-events-none">
           {invitationNumber}
         </div>
       )}
