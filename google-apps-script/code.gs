@@ -53,7 +53,8 @@ function ensureHeaders(sheetKey, sheet) {
 
   let numCols = 4;
   if (sheetKey === 'rsvp') {
-    sheet.appendRow(['Timestamp', 'Name', 'Status', 'Submitted At (ISO)']);
+    sheet.appendRow(['Timestamp', 'Name', 'Phone', 'Status', 'Guests', 'Submitted At (ISO)']);
+    numCols = 6;
   } else if (sheetKey === 'wishes') {
     sheet.appendRow(['Timestamp', 'Name', 'Wish', 'Submitted At (ISO)']);
   }
@@ -74,7 +75,9 @@ function buildRow(sheetKey, payload) {
     return [
       now,
       sanitize(payload.name),
+      sanitize(payload.phone),
       sanitize(payload.status),
+      sanitize(payload.guests),
       sanitize(payload.submittedAt),
     ];
   } else if (sheetKey === 'wishes') {

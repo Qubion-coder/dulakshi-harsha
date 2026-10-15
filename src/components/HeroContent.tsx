@@ -63,7 +63,7 @@ export const HeroContent: React.FC = () => {
       {/* Intro video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/intro.mp4"
+        src="/intro-beach.mp4"
         autoPlay
         muted
         playsInline

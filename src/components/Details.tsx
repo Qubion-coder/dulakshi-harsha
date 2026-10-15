@@ -62,13 +62,22 @@ export const Details: React.FC = () => {
                 <br />
                 Makola, Kiribathgoda
               </p>
+              <div className="mt-5 overflow-hidden rounded-2xl border border-brand-ink/30 shadow-sm">
+                <iframe
+                  title="Saminro Grand Palace map"
+                  src="https://maps.google.com/maps?q=Saminro%20Grand%20Palace%2C%20Kiribathgoda&z=16&output=embed"
+                  className="block h-56 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
               <a
                 target="_blank"
                 rel="noreferrer"
                 href="https://maps.app.goo.gl/Yzv24jkRjBJDkK3ZA"
-                className="mt-5 inline-flex items-center justify-center border border-brand-ink text-brand-ink px-7 py-2.5 text-[11px] tracking-[0.25em] uppercase font-sans hover:bg-brand-ink/10 transition-colors"
+                className="mt-4 inline-flex items-center justify-center rounded-xl border border-brand-ink text-brand-ink px-7 py-2.5 text-[11px] tracking-[0.25em] uppercase font-sans hover:bg-brand-ink/10 transition-colors"
               >
-                Google Maps
+                View on Map
               </a>
             </motion.div>
           </div>

@@ -37,6 +37,13 @@ export const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
+        <p className="text-5xl sm:text-6xl text-brand-ink leading-none" style={{ fontFamily: "'Great Vibes', cursive" }}>
+          Save the
+        </p>
+        <p className="font-display text-2xl sm:text-3xl uppercase tracking-[0.4em] text-brand-ink pl-[0.4em] mt-1 mb-10">
+          Date
+        </p>
+
         <h2 className="font-display font-normal text-brand-ink leading-[0.95] text-7xl sm:text-8xl" style={{ fontVariantNumeric: "lining-nums" }}>
           19<span className="mx-1">·</span>11
           <br />

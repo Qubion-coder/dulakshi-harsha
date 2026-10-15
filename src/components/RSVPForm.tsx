@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export const RSVPForm: React.FC = () => {
   const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
   const [attending, setAttending] = useState('');
   const [guests, setGuests] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,7 +35,7 @@ export const RSVPForm: React.FC = () => {
       const status = attending === 'yes' ? 'Accepts' : 'Declines';
       await submitToGoogleSheet('rsvp', { 
         name, 
-        address,
+        phone,
         guests,
         status, 
         link: window.location.href,
@@ -66,8 +66,8 @@ export const RSVPForm: React.FC = () => {
             <p className="text-4xl sm:text-5xl text-brand-ink text-left pl-2 -mb-4" style={{ fontFamily: "'Great Vibes', cursive" }}>
               please
             </p>
-            <h2 className="font-display font-normal text-brand-ink uppercase leading-[0.85] tracking-normal text-[7.5rem] sm:text-[9rem]">
-              RS<br />VP
+            <h2 className="font-display font-normal text-brand-ink uppercase leading-none tracking-normal whitespace-nowrap text-7xl sm:text-8xl">
+              RSVP
             </h2>
             <p className="text-sm font-serif text-brand-ink/90 leading-relaxed px-2">
               Please help us prepare everything better by confirming your attendance at our wedding event with the following RSVP form:
@@ -87,7 +87,7 @@ export const RSVPForm: React.FC = () => {
                 <input 
                   type="text" 
                   required 
-                  className="w-full bg-white/70 text-brand-ink border border-brand-ink/50 px-3 py-2.5 font-sans focus:ring-1 focus:ring-brand-ink focus:border-brand-ink outline-none transition-all"
+                  className="w-full rounded-xl bg-white/70 text-brand-ink border border-brand-ink/50 px-3 py-2.5 font-sans focus:ring-1 focus:ring-brand-ink focus:border-brand-ink outline-none transition-all"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   disabled={isSubmitting}
@@ -95,12 +95,14 @@ export const RSVPForm: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-brand-ink font-serif text-sm">Address</label>
+                <label className="block text-brand-ink font-serif text-sm">Phone Number</label>
                 <input 
-                  type="text" 
-                  className="w-full bg-white/70 text-brand-ink border border-brand-ink/50 px-3 py-2.5 font-sans focus:ring-1 focus:ring-brand-ink focus:border-brand-ink outline-none transition-all"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel" 
+                  className="w-full rounded-xl bg-white/70 text-brand-ink border border-brand-ink/50 px-3 py-2.5 font-sans focus:ring-1 focus:ring-brand-ink focus:border-brand-ink outline-none transition-all"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   disabled={isSubmitting}
                 />
               </div>
@@ -112,7 +114,7 @@ export const RSVPForm: React.FC = () => {
                     required 
                     value={attending}
                     onChange={(e) => setAttending(e.target.value)}
-                    className="w-full bg-white/70 text-brand-ink border border-brand-ink/50 px-3 py-2.5 font-sans appearance-none focus:ring-1 focus:ring-brand-ink focus:border-brand-ink outline-none transition-all [&>option]:bg-white"
+                    className="w-full rounded-xl bg-white/70 text-brand-ink border border-brand-ink/50 px-3 py-2.5 font-sans appearance-none focus:ring-1 focus:ring-brand-ink focus:border-brand-ink outline-none transition-all [&>option]:bg-white"
                     disabled={isSubmitting}
                   >
                     <option value="" disabled></option>
@@ -127,7 +129,7 @@ export const RSVPForm: React.FC = () => {
 
               <div className="space-y-1.5">
                 <label className="block text-brand-ink font-serif text-sm">Number of Guest</label>
-                <div className="relative flex items-center bg-white/70 border border-brand-ink/50 transition-all">
+                <div className="relative flex items-center overflow-hidden rounded-xl bg-white/70 border border-brand-ink/50 transition-all">
                   <button 
                     type="button" 
                     className="px-4 py-2.5 text-brand-ink hover:bg-brand-ink/10"
@@ -155,7 +157,7 @@ export const RSVPForm: React.FC = () => {
               <div className="pt-6 pb-2">
                 <button 
                   type="submit" 
-                  className="w-full bg-brand-ink text-brand-cream py-3.5 text-sm tracking-widest uppercase font-serif hover:bg-brand-ink/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed border border-brand-ink"
+                  className="w-full rounded-xl bg-brand-ink text-brand-cream py-3.5 text-sm tracking-widest uppercase font-serif hover:bg-brand-ink/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed border border-brand-ink"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}

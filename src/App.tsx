@@ -75,7 +75,7 @@ export default function App() {
         {/* Watermark video behind the sections after the hero */}
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-10 sepia-[0.3]"
-          src="/background.mp4"
+          src="/background-walk.mp4"
           autoPlay
           muted
           loop
