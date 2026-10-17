@@ -25,7 +25,7 @@ export const HappyCouple: React.FC = () => {
               THE BRIDE
             </p>
 
-            <h3 className="text-4xl sm:text-5xl font-serif text-brand-ink">
+            <h3 className="text-4xl sm:text-5xl font-serif font-bold text-brand-ink">
               Dulakshi
             </h3>
 
@@ -62,7 +62,7 @@ export const HappyCouple: React.FC = () => {
               THE GROOM
             </p>
 
-            <h3 className="text-4xl sm:text-5xl font-serif text-brand-ink">
+            <h3 className="text-4xl sm:text-5xl font-serif font-bold text-brand-ink">
               Harsha
             </h3>
 

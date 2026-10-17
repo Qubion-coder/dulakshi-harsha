@@ -94,12 +94,12 @@ export const HeroContent: React.FC = () => {
             <TypeText text="Together with their families" delay={T.together} />
           </p>
 
-          <h1 className="font-display font-normal uppercase tracking-[0.12em] leading-tight text-4xl sm:text-5xl md:text-6xl">
+          <h1 className="font-display font-bold uppercase tracking-[0.12em] leading-tight text-4xl sm:text-5xl md:text-6xl">
             <TypeText text="Dulakshi" delay={T.bride} className="block" />
             <TypeText
               text="and"
               delay={T.and}
-              className="block normal-case tracking-normal text-3xl sm:text-4xl my-1"
+              className="block font-normal normal-case tracking-normal text-3xl sm:text-4xl my-1"
               style={{ fontFamily: "'Great Vibes', cursive" }}
             />
             <TypeText text="Harsha" delay={T.groom} className="block" />
