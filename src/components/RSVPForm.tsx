@@ -63,14 +63,21 @@ export const RSVPForm: React.FC = () => {
         <div className="relative z-10 flex flex-col w-full space-y-6">
           
           <div className="text-center space-y-4 mb-2">
-            <p className="text-4xl sm:text-5xl text-brand-ink text-left pl-2 -mb-4" style={{ fontFamily: "'Great Vibes', cursive" }}>
-              please
+            <p className="text-4xl sm:text-5xl text-brand-ink leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>
+              Will you join us?
             </p>
             <h2 className="font-display font-normal text-brand-ink uppercase leading-none tracking-normal whitespace-nowrap text-7xl sm:text-8xl">
               RSVP
             </h2>
+            <div className="flex items-center justify-center gap-4">
+              <span className="h-px w-10 bg-brand-ink/40" />
+              <p className="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-ink">
+                Kindly Reply
+              </p>
+              <span className="h-px w-10 bg-brand-ink/40" />
+            </div>
             <p className="text-sm font-serif text-brand-ink/90 leading-relaxed px-2">
-              Please help us prepare everything better by confirming your attendance at our wedding event with the following RSVP form:
+              We joyfully await your presence to celebrate our wedding ceremony. Please let us know if you will be joining us.
             </p>
           </div>
 
