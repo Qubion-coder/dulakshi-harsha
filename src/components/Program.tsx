@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Users, Heart, Sparkles } from 'lucide-react';
+import { Users, Heart, Wine, Sparkles } from 'lucide-react';
 
 const events = [
   { time: '9:00 AM', title: 'Guest Arrival', icon: Users },
   { time: '10:15 AM', title: 'Poruwa Ceremony', icon: Heart },
-  { time: '4:00 PM', title: 'Farewell', icon: Sparkles },
+  { time: '12:30 PM', title: 'Reception', icon: Wine },
+  { time: '4:00 PM', title: 'Heartfelt Thanks', icon: Sparkles },
 ];
 
 export const Program: React.FC = () => {
