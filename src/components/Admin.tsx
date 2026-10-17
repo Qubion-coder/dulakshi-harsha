@@ -12,9 +12,11 @@ export const Admin: React.FC = () => {
 
   const getGeneratedLink = () => {
     if (!guestName.trim() && !invitationNumber.trim()) return baseUrl;
-    const data = `${prefix}|${guestName.trim()}|${invitationNumber.trim()}`;
-    const encoded = btoa(encodeURIComponent(data));
-    return `${baseUrl}?invite=${encoded}`;
+    const params = new URLSearchParams();
+    if (prefix) params.set('prefix', prefix);
+    if (guestName.trim()) params.set('name', guestName.trim());
+    if (invitationNumber.trim()) params.set('num', invitationNumber.trim());
+    return `${baseUrl}?${params.toString().replace(/\+/g, '%20')}`;
   };
   const generatedLink = getGeneratedLink();
 

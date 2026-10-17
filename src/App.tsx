@@ -88,7 +88,7 @@ export default function App() {
         {/* Watermark video behind the sections after the hero */}
         <video
           ref={bgVideoRef}
-          className="absolute inset-0 h-full w-full object-cover opacity-10 sepia-[0.3]"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.15] sepia-[0.3]"
           src="/background-story.mp4"
           muted
           loop

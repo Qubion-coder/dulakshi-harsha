@@ -5,7 +5,7 @@ import {defineConfig, loadEnv, type Plugin} from 'vite';
 
 const SHARE_FAVICON_PATH = '/2.jpg';
 
-const DEFAULT_SITE_URL = 'https://gimhan-teneeshiya-weddinginvitation.vercel.app';
+const DEFAULT_SITE_URL = 'https://dulakshi-harsha-weddinginvitation.vercel.app';
 
 function getSiteUrl(env: Record<string, string>): string {
   const configured = env.VITE_SITE_URL?.trim();
